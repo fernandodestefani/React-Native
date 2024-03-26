@@ -1,30 +1,21 @@
-import { useState } from 'react'
-import { View, Text, Button, Modal } from 'react-native'
+import { useState } from 'react';
+import { View, StatusBar, Button } from 'react-native'
 
 export default function App() {
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isStatusBarVisible, setIsStatusBarVisible] = useState(false)
   return (
-  <View style={{ flex: 1, backgroundColor: 'plum', padding: 60}}>    
-    <Button 
-    title='Press' 
-    onPress={() => setIsModalVisible(true)}
-    color={'midnightblue'}
+  <View style={{ flex: 1, backgroundColor: 'plum', padding: 60}}>
+    <Button
+     title='Hide / Show StatusBar?'
+     onPress={() => setIsStatusBarVisible(!isStatusBarVisible)}
+     color='midnightblue'
     />
-    <Modal
-     visible={isModalVisible}
-     onRequestClose={() => setIsModalVisible(false)}
-     animationType='slide'
-     presentationStyle='pageSheet'
-     >
-      <View style={{ flex: 1, backgroundColor: 'lightblue', padding: 60}}>
-        <Text>Modal content</Text>
-        <Button
-         title='Close' 
-         color={'midnightblue'} 
-         onPress={() => setIsModalVisible(false)}
-        />
-      </View>
-    </Modal>
+    <StatusBar
+     backgroundColor='lightgreen'
+     barStyle='dark-content'
+     hidden={isStatusBarVisible}
+    />
+  
   </View>
   );
 }
