@@ -1,9 +1,9 @@
-**Introduction to React Native**
+# **Introduction to React Native**
 
 This repository contains all the code and exercises from the Introduction to React Native course. The lessons cover the core concepts, styling, layouts, dynamic user interfaces, and various exercises designed to help students build a strong foundation in mobile app development.
 
 <br>
-**Course Overview**
+<strong>Course Overview</strong>
 
 The course is structured to provide a hands-on learning experience, focusing on the following key areas of React Native development:
 
@@ -25,7 +25,7 @@ Implementing user interactions such as clicks and gestures.
 Displaying dynamic lists of items using FlatList and ScrollView.
 
 <br>
-**PokemonCard Challenge**
+<strong>PokemonCard Challenge</strong>
 
 One of the highlights of this course is the PokemonCard Challenge, a practical exercise where you build an app that displays cards of various Pokémon with dynamic data rendering. This challenge demonstrates how to apply the core concepts learned in the course to a fun and engaging project.
 PokemonCard App Screenshots
