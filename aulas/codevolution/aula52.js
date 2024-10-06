@@ -16,11 +16,7 @@ export default function App() {
             )
           }}
           keyExtractor={(item, index) => item.id.toString() }
-          ItemSeparatorComponent={<View style={{height: 16}}/>}
           // horizontal
-          ListEmptyComponent={<Text style={{fontSize: 30, fontWeight: 'bold'}}>No items found</Text>}
-          ListHeaderComponent={<Text style={styles.headerText}>Pokemon List</Text>}
-          ListFooterComponent={<Text style={styles.footerText}>End of List</Text>}
         />
       </View>
     </SafeAreaView>
@@ -41,20 +37,9 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 8,
     borderWidth: 1,
-    // marginBottom: 16,
+    marginBottom: 16,
   },
   cardText: {
     fontSize: 30,
-  },
-  headerText: {
-    fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 12,
-  },
-  footerText: {
-    fontSize: 24,
-    textAlign: 'center',
-    marginTop: 12,
-    marginBottom: 12,
-  },
+  }
 });
