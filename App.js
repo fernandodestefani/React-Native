@@ -1,26 +1,33 @@
-import { StyleSheet, Text, View, FlatList, ScrollView, SafeAreaView, StatusBar } from "react-native";
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  SectionList, 
+  ScrollView, 
+  SafeAreaView, 
+  StatusBar
+ } from "react-native";
 import pokemonList from './aulas/codevolution/data.json';
+import groupedPokemonList from './aulas/codevolution/grouped-data.json';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.scrollView}>
-        <FlatList
-          data={pokemonList}
+        <SectionList
+          sections={groupedPokemonList}
           renderItem={({item}) => {
             return (
-              <View style={styles.card} key={item.id}>
-                <Text style={styles.cardText}>{item.type}</Text>
-                <Text style={styles.cardText}>{item.name}</Text>
+              <View style={styles.card}>
+                <Text style={styles.cardText}>{item}</Text>
               </View>
             )
           }}
-          keyExtractor={(item, index) => item.id.toString() }
-          ItemSeparatorComponent={<View style={{height: 16}}/>}
-          // horizontal
-          ListEmptyComponent={<Text style={{fontSize: 30, fontWeight: 'bold'}}>No items found</Text>}
-          ListHeaderComponent={<Text style={styles.headerText}>Pokemon List</Text>}
-          ListFooterComponent={<Text style={styles.footerText}>End of List</Text>}
+          renderSectionHeader={({section}) => (
+          <Text style={styles.sectionHeaderText}>{section.type}</Text>
+        )}
+          ItemSeparatorComponent={() => <View style={{height: 16}}/>}
+          SectionSeparatorComponent={() => <View style={{height: 16}}/>}
         />
       </View>
     </SafeAreaView>
@@ -57,4 +64,9 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginBottom: 12,
   },
+  sectionHeaderText: {
+    backgroundColor: "white",
+    fontSize: 24,
+    fontWeight: 'bold'
+  }
 });
