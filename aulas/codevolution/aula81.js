@@ -4,7 +4,6 @@ import ProfileScreen from "./screens/ProfileScreen";
 import CourseListScreen from "./screens/CourseListScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import Ionicons from "@expo/vector-icons/Ionicons"
-import { AboutStack } from "./AppStack";
 
 const Tab = createBottomTabNavigator()
 
@@ -29,9 +28,6 @@ export default function App() {
                 <Tab.Screen name="Settings" component={SettingsScreen} options={{
                     tabBarLabel: 'Settings',
                     tabBarIcon: ({color}) => (<Ionicons name="settings" size={25} color={color}/>)
-                }}/>
-                <Tab.Screen name="About Stack" component={AboutStack} options={{
-                    headerShown: false,
                 }}/>
             </Tab.Navigator>
         </NavigationContainer>
